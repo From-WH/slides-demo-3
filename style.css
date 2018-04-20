@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgb(219, 196, 196);
+    background-color: rgb(233, 220, 220);
 }
 h1{
     text-align: center;
@@ -16,9 +16,15 @@ h1{
     margin: 50px auto 0;
     border-radius: 15px;
 }
+.images{
+    display: flex;
+    transition: all 1s;
+}
 .images img{
     top: 0;
     width: 100%;
-    transition: all 750ms;
     border-radius: 15px;
+}
+.buttonStyle{
+    text-align: center;
 }
