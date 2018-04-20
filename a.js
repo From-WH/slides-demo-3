@@ -4,11 +4,14 @@ let $images = $slides.children('img')
 let $firstCopy = $images.eq(0).clone(true)
 let $lastCopy = $images.eq($images.length - 1).clone(true)
 
-
-
 $slides.append($firstCopy)
 $slides.prepend($lastCopy)
-$slides.css({ transform: 'translateX(-600px)' })
+
+function makeFakeSlides() {
+    
+}
+
+$slides.css({ transform: ('translateX(-600px)') })
 
 let current = 0
 
@@ -17,9 +20,9 @@ $buttons.eq(0).on('click', function () {
         $slides.css({ transform: 'translateX(-3000px)' })
             .one('transitionend', function () {
                 $slides.hide()
-                    .offset()
+                .offset()
                 $slides.css({ transform: ('translateX(-600px)') })
-                    .show()
+                .show()
             })
     } else {
         $slides.css({ transform: 'translateX(-600px)' })
