@@ -2,36 +2,86 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgb(233, 220, 220);
+    background-color: rgb(242, 242, 242);
+}
+.clearFix{
+    text-align: center;
+    clear: both;
+    content: "";
 }
 h1{
     text-align: center;
     line-height: 100px;
-    color: rgb(124, 76, 76);
+    color: rgb(68, 68, 68);
+    font-size: 42px;
+    display: block;
+    font-family: "Myriad Pro",Arial,Helvetica,sans-serif;
+}
+h2{
+    text-align: center;
+    font-size: 16px;
+    font-family: "Myriad Pro",Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    margin-top: -10px;
+  
+}
+a{
+    text-decoration: none; 
+    color:#0196e3;
+}
+a:hover{
+    text-decoration: underline; 
+    color:#0196e3;
+}
+.firstH{
+    font-weight: normal;
+    margin-top: 25px;
+}
+.lastH{
+    margin-top: -51px;
 }
 .window{
-    width: 600px;
-    height: 400px;
+    width: 920px;
+    height: 445px;
     overflow: hidden;
     margin: 50px auto 0;
-    border-radius: 15px;
+    border: 1px solid white;
+    border-radius: 4px;
+    box-shadow: 0px 0px 1px 1px rgba(143,143,143,1);
 }
 .images{
     display: flex;
-    transition: all 1s;
 }
 .images img{
     top: 0;
     width: 100%;
-    border-radius: 15px;
+}
+.red{
+    background: red;
 }
 .controls{
     text-align: center;
 }
 .buttonStyle{
-  text-align: center;
+    width: 920px;
+    height: 45px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f2f2f2;
+
 }
-.buttonStyle button{
-     width:20px;
-     height:20px;
+ul{
+    display: inline-block;
+}
+ul li{
+    float: left;
+    list-style: none;
+    display: list-item;
+    width: 60px;
+    height: 45px;
+    padding: 14px 6px;
+}
+ul li.red{
+    background: #fff;
+
 }
