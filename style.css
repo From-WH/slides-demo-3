@@ -25,6 +25,13 @@ h1{
     width: 100%;
     border-radius: 15px;
 }
-.buttonStyle{
+.controls{
     text-align: center;
+}
+.buttonStyle{
+  text-align: center;
+}
+.buttonStyle button{
+     width:20px;
+     height:20px;
 }
