@@ -7,13 +7,20 @@ makeFakeSlides()
 $slides.css({ transform: ('translateX(-920px)'), transition: `none`})
 bindEvents()
 
-// $(next).on('click',function () {   此处可以设置上下翻页
+//此处可以设置上下翻页
+// $(next).on('click',function () {   
 //     goToSlide(current + 1)
 // })
 // $(previous).on('click', function () {
 //     goToSlide(current - 1)
 // })
-// document.addEventListener('vis')  //写到这里啦
+document.addEventListener('visibilitychange',function (e) {
+    if(document.hidden){
+        window.clearInterval(timeID)
+    }else{
+        sitTimer()
+    }
+})  //写到这里啦
 // let times = setInterval(()=>{
 //     goToSlide( current + 1)
 // },1500)
@@ -32,7 +39,6 @@ function bindEvents() {
         let $li = $(e.currentTarget)
         let index = $li.index()
         goToSlide(index)
-
     })
 }
 function goToSlide(index) {
@@ -43,7 +49,7 @@ function goToSlide(index) {
         index = $buttons.length - 1
     }
     if (index === 0 && current === $buttons.length - 1) {
-        $slides.css({ transform: `translateX(${-($buttons.length + 1) * 920}px)`,background:`red` })
+        $slides.css({ transform: `translateX(${-($buttons.length + 1) * 920}px)`})
             .one('transitionend', function () {
                 $slides.hide()
                     .offset()
@@ -69,15 +75,15 @@ function makeFakeSlides() {
 
         $slides.append($firstCopy)
         $slides.prepend($lastCopy)
-}
+ }
 
 
 let $lis = $('#buttonWrapper > ul > li')
 for (let i = 0; i < $lis.length; i++) {
-    $($lis[i]).on('click', function (x) {         //获取每一个span点击信息
-        var index = $(x.currentTarget).index()          //获取点击的是第几个span
-        n = index                                       //将被点击的那个span赋予n
-        activeButton($lis.eq(n)) // siblings接受的是选择器所以有. removeClass接受的是类名所以没有
+    $($lis[i]).on('click', function (x) {         
+        var index = $(x.currentTarget).index()          
+        n = index                                       
+        activeButton($lis.eq(n)) 
     })
 }
 
