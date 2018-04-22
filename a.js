@@ -14,17 +14,9 @@ bindEvents()
 // $(previous).on('click', function () {
 //     goToSlide(current - 1)
 // })
-document.addEventListener('visibilitychange',function (e) {
-    if(document.hidden){
-        window.clearInterval(timeID)
-    }else{
-        sitTimer()
-    }
-})  //写到这里啦
 // let times = setInterval(()=>{
 //     goToSlide( current + 1)
 // },1500)
-
 // $('.container').on('mouseenter',function () {
 //     window.clearInterval(times)
 // })
@@ -77,7 +69,7 @@ function makeFakeSlides() {
         $slides.prepend($lastCopy)
  }
 
-
+//点击图标，进行跳转
 let $lis = $('#buttonWrapper > ul > li')
 for (let i = 0; i < $lis.length; i++) {
     $($lis[i]).on('click', function (x) {         
@@ -94,7 +86,7 @@ playSlide(n % size)
 
 var timeID = sitTimer()
 
-
+//鼠标进入，轮播暂停
 $('.window').on('mouseenter', function () {
     window.clearInterval(timeID)
 })
@@ -117,3 +109,12 @@ function activeButton($lis) {
         .addClass('red')
         .siblings('.red').removeClass('red')
 }
+
+//离开页面轮播暂停
+document.addEventListener('visibilitychange', function (e) {
+    if (document.hidden) {
+        window.clearInterval(timeID)
+    } else {
+        sitTimer()
+    }
+})
